@@ -135,6 +135,31 @@ cd <path_to_your_simulator_workspace>
 catkin_make
 ```
 
+## Running YOLO and DWA demo
+#### YOLO Demo
+- In first terminal:
+  ```bash
+  source devel/setup.bash
+  roslaunch gem_launch gem_init.launch world_name:="highbay_track.world" x:=12.5 y:=-21 yaw:=3.1416 custom_scene:=true
+  ```
+- In second terminal:
+  ```bash
+  source devel/setup.bash
+  roslaunch gem_gazebo yolo_detector.launch
+  ```
+
+#### DWA Demo
+- In first terminal:
+  ```bash
+  source devel/setup.bash
+  roslaunch gem_launch gem_init.launch world_name:="highbay_track.world" x:=12.5 y:=-21 yaw:=3.1416 custom_scene:=true
+  ```
+- In second terminal:
+  ```bash
+  source devel/setup.bash
+  roslaunch gem_dwa_sim dwa_sim.launch goal.x:=-20.0 goal.y:=-20.0 yaml_path:=$(rospack find gem_gazebo)/scenes/highbay_track.yaml
+  ```
+
 ## Running the Simulator
 
 The simulator supports both Polaris GEM e4 (default) and GEM e2 vehicles. You can select which vehicle to use when launching the simulator.
