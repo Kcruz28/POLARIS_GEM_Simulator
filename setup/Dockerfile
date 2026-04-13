@@ -10,6 +10,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y \
     git \
     sudo \
+    tmux \
     python3-pip \
     build-essential \
     cmake \
@@ -30,7 +31,11 @@ RUN apt-get install -y \
     ros-noetic-velodyne-simulator \
     ros-noetic-septentrio-gnss-driver \
     ros-noetic-novatel-gps-msgs \
+    ros-noetic-vision-msgs \
+    ros-noetic-cv-bridge \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install ultralytics
 
 ARG USER
 ARG USER_UID
