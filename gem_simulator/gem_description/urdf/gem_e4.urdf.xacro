@@ -58,7 +58,7 @@
     <material>Gazebo/Blue</material>
   </gazebo>
 
-  <joint name="base_link" type="fixed">
+  <joint name="base_footprint_to_base_link" type="fixed">
     <origin xyz="0 0 0.268" rpy="0 0 0" />
     <parent link="base_footprint" />
     <child link="base_link" />

@@ -24,7 +24,7 @@
 
   <!-- ── Goal (world frame) ───────────────────────────────── -->
   <arg name="goal_x"    default="-20.0"/>
-  <arg name="goal_y"    default="-20.0"/>
+  <arg name="goal_y"    default="-17"/>
 
   <!-- ── Dynamic agent constant velocity (m/s, world frame) ── -->
   <arg name="agent_vel_x" default="0.0"/>

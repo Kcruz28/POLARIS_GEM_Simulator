@@ -29,8 +29,9 @@
           args="-param robot_description -model gem_$(arg vehicle_name) -urdf -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
     <!-- Load the joint controllers. One of these publishes the joint states to joint_states. -->
+    <rosparam file="$(find gem_gazebo)/config/gem_joint_control_params.yaml" command="load"/>
     <node name="controller_spawner" pkg="controller_manager" type="spawner"
-          args="$(find gem_gazebo)/config/gem_joint_control_params.yaml"/>
+          args="joint_state_ctrlr left_steering_ctrlr right_steering_ctrlr left_front_wheel_ctrlr right_front_wheel_ctrlr left_rear_wheel_ctrlr right_rear_wheel_ctrlr"/>
 
     <!-- Control the steering, axle joints. -->
     <node name="ackermann_controller" pkg="gem_gazebo" type="gem_control.py">
